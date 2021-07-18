@@ -5,7 +5,7 @@ def enter_sent():
     sentence = input("Enter any sentence and I will mirror it: ")
     reverse = list(sentence)
     list.reverse(reverse)
-    result = " ".join(reverse)
+    result = "".join(reverse)
     print(result)
 
 enter_sent()
