@@ -29,6 +29,9 @@ function getElementsLessThan100AtProperty(obj, key) {
 }
 
 
+
+//Test case
+
 var obj = {
   key: [1000, 20, 50, 500]
 };
