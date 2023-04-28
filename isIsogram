@@ -1,0 +1,41 @@
+function isIsogram(text) {
+  // empty string should return true
+  if (text === "") {
+    return true;
+  }
+  var lowerCaseText = text.toLowerCase();
+  var arrayOfLetters = lowerCaseText.split("");
+  var setOfLetters = new Set();
+  for (var i = 0; i < arrayOfLetters.length; i++) {
+    setOfLetters.add(arrayOfLetters[i]);
+  }
+ // console.log (setOfLetters);
+  return setOfLetters.size === arrayOfLetters.length;
+}
+
+// ASSERTION FUNCTION(S) TO BE USED
+function assertEqual(actual, expected, testName){
+  if (actual === expected) {
+    console.log ('passed');
+  }else{
+    console.log ('FAILED [' + testName + '] expected "' + expected + '" but got "' + actual + '"');
+  }
+}
+
+// TESTS CASES
+var inputPass1 = "abcdefg";
+var actualPass1 = isIsogram(inputPass1);
+assertEqual(actualPass1, true, "");
+
+var inputPass2 = "stop";
+var actualPass2 = isIsogram(inputPass2);
+assertEqual(actualPass2, true, "");
+
+var inputFail = "stopped";
+var actualFail1 = isIsogram(inputFail);
+assertEqual(actualFail1, false, "");
+
+var inputFail2 = "aAqzrj";
+var actualFail2 = isIsogram(inputFail2);
+assertEqual(actualFail2, false, "");
+ 
